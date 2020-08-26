@@ -11,7 +11,7 @@ pipeline {
           sh "pytest -v --alluredir=target/allure-results"
           }
           }
-      stage('Reports') {
+      stage('reports') {
         allure([
         includeProperties: false,
         jdk: '',
