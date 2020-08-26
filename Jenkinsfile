@@ -3,12 +3,12 @@ pipeline {
     stages {
       stage('Build') {
         steps {
-          sh "pip install -r rearequirements.txt"
+          bat "pip install -r rearequirements.txt"
           }
           }
       stage('Test') {
         steps {
-          sh "pytest -v --alluredir=target/allure-results"
+          bat "pytest -v --alluredir=target/allure-results"
           }
           }
       stage ('Results') {
