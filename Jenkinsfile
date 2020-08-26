@@ -15,3 +15,4 @@ pipeline {
         allure jdk: '', results: [[path: "target/allure-results"]]
     }
 }
+}
