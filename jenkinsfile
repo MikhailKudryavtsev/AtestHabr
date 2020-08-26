@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+    stages {
+      stage('Build') {
+        steps {
+          sh "pip install -r rearequirements.txt"
+          }
+          }
+      stage('Test') {
+        steps {
+        sh "set email=deathikun@gmail.com"
+        sh "set password=918273645q"
+        sh "set username=Death-kun"
+        sh "pytest -v --alluredir=target/allure-results"
+          }
+          }
+      stage('Reports') {
+        steps {
+            script {
+                allure([
+                    includeProperties: false,
+                    jdk: '',
+                    properties: [],
+                    reportBuildPolicy: 'ALWAYS',
+                    results: [[path: 'target/allure-results']]
+                ])
+                }
+            }
+            }
+}
+
