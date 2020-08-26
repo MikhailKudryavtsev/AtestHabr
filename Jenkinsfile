@@ -8,7 +8,10 @@ pipeline {
           }
       stage('Test') {
         steps {
-          bat "pytest -v --alluredir=target/allure-results"
+            bat "set email=deathikun@gmail.com"
+            bat "set password=918273645q"
+            bat "set username=Death-kun"
+            bat "pytest -v --alluredir=target/allure-results"
           }
           }
       stage ('Results') {
