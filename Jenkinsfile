@@ -1,5 +1,12 @@
 pipeline {
-    agent any
+    agent {
+        label 'windows'
+    }
+    environment {
+        email = 'deathikun@gmail.com'
+        password = '918273645q'
+        username = 'Death-kun'
+    }
     stages {
       stage('Build') {
         steps {
@@ -8,9 +15,6 @@ pipeline {
           }
       stage('Test') {
         steps {
-            bat "set email=deathikun@gmail.com"
-            bat "set password=918273645q"
-            bat "set username=Death-kun"
             bat "pytest -v --alluredir=target/allure-results"
           }
           }
