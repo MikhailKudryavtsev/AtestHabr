@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        label 'windows'
-    }
+    agent any
     environment {
         email = 'deathikun@gmail.com'
         password = '918273645q'
